@@ -5,12 +5,19 @@
 #include <vector>
 using namespace std;
 int main(){
-  Filme f("Osmosis Jones", "deconhecida", 10.0);
+  Filme f("asmosis Jones", "deconhecida", 10.0);
   Filme a("Osmosis Jones", "desconheida",5.5);
+  Filme b("aaaaaa", "desconheida",5.5);
   Catalogo catalog;
   catalog+= f;
   catalog+= a;
-  vector<Filme> filmes = catalog.getFilmes();
+  vector<Filme> &filmes = catalog.getFilmes();
+  catalog+= b;
+
+  for (Filme f:filmes){
+    cout<<f.getNome()<<endl;
+  }
+  catalog-=b;
   for (Filme f:filmes){
     cout<<f.getNome()<<endl;
   }

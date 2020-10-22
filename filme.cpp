@@ -1,4 +1,6 @@
+#include <cctype>
 #include <string>
+#include <algorithm>
 
 #include "filme.h"
 using namespace std;
@@ -24,7 +26,7 @@ string Filme::getProdutora() const {return produtora;}
 double Filme::getNota() const {return nota;}
 
 bool Filme::operator<(const Filme & filmeRight)const {
-  if (nome < filmeRight.nome){
+  if (toLowerCase(nome) < toLowerCase(filmeRight.nome)){
     return true;
   }else{
     return false;
@@ -32,7 +34,7 @@ bool Filme::operator<(const Filme & filmeRight)const {
 }
 
 bool Filme::operator>(const Filme & filmeRight)const {
-  if (nome > filmeRight.nome){
+  if (toLowerCase(nome) > toLowerCase(filmeRight.nome)){
     return true;
   }else{
     return false;
@@ -47,3 +49,11 @@ bool Filme::operator==(const Filme & filmeRight)const {
   }
 }
 
+
+string Filme::toLowerCase(const string s) const{
+  string result;
+  for (int i = 0; i < s.length();i++){
+    result += tolower(s[i]);
+  }
+  return result;
+}

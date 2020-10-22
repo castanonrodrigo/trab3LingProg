@@ -25,5 +25,6 @@ struct Filme{
     string nome;
     string produtora;
     double nota;
+    string toLowerCase(const string) const;
 };
 #endif
