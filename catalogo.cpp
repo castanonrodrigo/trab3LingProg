@@ -7,6 +7,10 @@ vector<Filme> &Catalogo::getFilmes(){
 }
 void Catalogo::operator+=(const Filme & filme){
   for(int i = 0; i < filmes.size(); i++){
+    if(filme == filmes[i]){
+      cout << "O filme "<<filme.getNome()<< " ja existe na lista"<<endl;
+      return;
+    }
     if(filme < filmes[i]){
       filmes.insert(filmes.begin() + i, filme);
       break;

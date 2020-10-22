@@ -5,7 +5,7 @@
 #include <vector>
 using namespace std;
 int main(){
-  Filme f("Asmosis Jones", "deconhecida", 10.0);
+  Filme f("Osmosis Jones", "deconhecida", 10.0);
   Filme a("Osmosis Jones", "desconheida",5.5);
   Catalogo catalog;
   catalog+= f;
