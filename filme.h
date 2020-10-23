@@ -15,8 +15,12 @@ struct Filme{
     string getNome() const;
   //retorna produtora do filme
     string getProdutora() const;
+  //altera nome da produtora
+    void setProdutora(const string);
   //retorna nota do filme
     double getNota() const;
+  //altera valor da nota do filme
+    void setNota(const double);
 
     bool operator<(const Filme &) const;
     bool operator>(const Filme &) const;

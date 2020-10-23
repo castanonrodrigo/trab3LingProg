@@ -12,6 +12,8 @@ class Catalogo{
     void operator+=(const Filme &);
     void operator-=(const Filme &);
     Filme *operator()(const string);
+    Filme *operator()(const string, const string);
+    Filme *operator()(const string, const double);
 
   private:
     //lista de filmes no catálogo

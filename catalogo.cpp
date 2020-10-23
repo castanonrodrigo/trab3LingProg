@@ -39,3 +39,27 @@ Filme *Catalogo::operator()(const string nome){
   return NULL;
 
 }
+
+Filme *Catalogo::operator()(const string nome, const string novaProdutora){
+  Filme *ptr = (*this)(nome);
+  if (ptr != NULL){
+    ptr->setProdutora(novaProdutora);
+    return ptr;
+  }else{
+    cout<<"Filme "<<nome <<"nao encontrado"<<endl;
+    return NULL;
+  }
+}
+
+Filme *Catalogo::operator()(const string nome, const double novaNota){
+  Filme *ptr = (*this)(nome);
+  if (ptr != NULL){
+    ptr->setNota(novaNota);
+    return ptr;
+  }else{
+    cout<<"Filme "<<nome <<"nao encontrado"<<endl;
+    return NULL;
+  }
+}
+
+

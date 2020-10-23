@@ -23,7 +23,13 @@ Filme::Filme(string nome, string produtora, double nota):nome(nome), produtora(p
 
 string Filme::getNome() const {return nome;}
 string Filme::getProdutora() const {return produtora;}
+void Filme::setProdutora(const string novaProdutora){
+  produtora = novaProdutora;
+}
 double Filme::getNota() const {return nota;}
+void Filme::setNota(const double novaNota){
+  nota = novaNota;
+}
 
 bool Filme::operator<(const Filme & filmeRight)const {
   if (toLowerCase(nome) < toLowerCase(filmeRight.nome)){

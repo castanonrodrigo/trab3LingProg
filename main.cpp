@@ -17,10 +17,7 @@ int main(){
   for (Filme f:filmes){
     cout<<f.getNome()<<endl;
   }
-  catalog-=b;
-  for (Filme f:filmes){
-    cout<<f.getNome()<<endl;
-  }
+  /* catalog-=b; */
 
   /* Filme a; */
   /* cout << "Insira parametros do filme na ordem: Nome Produtora Nota"<<endl; */
