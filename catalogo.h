@@ -6,6 +6,7 @@
 #define CATALOGO_H
 using namespace std;
 class Catalogo{
+  friend ostream &operator<<(ostream&, const Catalogo &);
   public:
     Catalogo();
     vector<Filme> & getFilmes();

@@ -1,7 +1,14 @@
 #include "catalogo.h"
 
+
 Catalogo::Catalogo(){};
 
+ostream &operator<<(ostream & output, const Catalogo & catalogo){
+  for (int i=0; i<catalogo.filmes.size();i++){
+    output<<catalogo.filmes[i]<<endl;
+  }
+  return output;
+}
 vector<Filme> &Catalogo::getFilmes(){
   return filmes;
 }
@@ -61,5 +68,6 @@ Filme *Catalogo::operator()(const string nome, const double novaNota){
     return NULL;
   }
 }
+
 
 

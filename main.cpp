@@ -14,9 +14,7 @@ int main(){
   vector<Filme> &filmes = catalog.getFilmes();
   catalog+= b;
 
-  for (Filme f:filmes){
-    cout<<f.getNome()<<endl;
-  }
+  cout<<catalog;
   /* catalog-=b; */
 
   /* Filme a; */
