@@ -11,6 +11,7 @@ class Catalogo{
     vector<Filme> & getFilmes();
     void operator+=(const Filme &);
     void operator-=(const Filme &);
+    Filme *operator()(const string);
 
   private:
     //lista de filmes no catálogo

@@ -29,3 +29,13 @@ void Catalogo::operator-=(const Filme & filme){
   }
   cout<< "Filme " << filme.getNome()<< " nao foi encontrado"<<endl;
 }
+
+Filme *Catalogo::operator()(const string nome){
+  for (int i = 0; i < filmes.size(); i++){
+    if(filmes[i].getNome() == nome){
+      return &filmes[i];
+    }
+  }
+  return NULL;
+
+}
