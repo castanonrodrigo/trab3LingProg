@@ -12,6 +12,7 @@ class Catalogo{
     vector<Filme> & getFilmes();
     void operator+=(const Filme &);
     void operator-=(const Filme &);
+    void insereOrdenaVector(vector<Filme>&);
     Filme *operator()(const string);
     Filme *operator()(const string, const string);
     Filme *operator()(const string, const double);

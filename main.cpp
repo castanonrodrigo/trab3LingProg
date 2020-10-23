@@ -8,13 +8,18 @@ int main(){
   Filme a("Osmosis Jones", "desconheida",5.5);
   Filme b("aaaaaa", "desconheida",5.5);
   Filme c;
+  Filme d("Pequena Miss Sunshine", "Disney", 5.8);
+  Filme e("Ozark", "Netflix", 6.9);
+  Filme g("Fluminense", "Disney", 4.7);
   Catalogo catalog;
   catalog+= f;
   catalog+= a;
   vector<Filme> &filmes = catalog.getFilmes();
   catalog+= b;
-
-  cout<<catalog;
+  vector<Filme> vTest;
+  vTest.push_back(d);
+  vTest.push_back(e);
+  vTest.push_back(g);
   /* catalog-=b; */
 
   /* Filme a; */

@@ -1,4 +1,5 @@
 #include "catalogo.h"
+#include <algorithm>
 
 
 Catalogo::Catalogo(){};
@@ -37,6 +38,12 @@ void Catalogo::operator-=(const Filme & filme){
   cout<< "Filme " << filme.getNome()<< " nao foi encontrado"<<endl;
 }
 
+void Catalogo::insereOrdenaVector(vector<Filme> &vectorFilmes){
+  for (int i = 0; i < vectorFilmes.size(); i++){
+    (*this)+=vectorFilmes[i];
+  }
+  vectorFilmes.clear();
+}
 Filme *Catalogo::operator()(const string nome){
   for (int i = 0; i < filmes.size(); i++){
     if(filmes[i].getNome() == nome){
