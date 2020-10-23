@@ -6,14 +6,15 @@ Nome: asmosis Jones
 Produtora: deconhecida
 Nota: 10
 
+Nome: Nome:Brabo
+Produtora: Funcionou
+Nota: 10
+
 Nome: Osmosis Jones
 Produtora: desconheida
 Nota: 5.5
 
-Nome:Brabo
-Produtora: Funcionou
-Nota: 10.0
-
 Nome: Piratas do Caribe
 Produtora: Disney
 Nota: 8.6
+

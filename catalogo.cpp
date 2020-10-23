@@ -77,7 +77,6 @@ void Catalogo::recoverFromDataBase(ifstream &file){
         case 2:
           notaTmp = stod(line);
           Filme tmp(nomeTmp, produtoraTmp, notaTmp);
-          cout<<"adicionando: "<< tmp.getNome()<<endl;
           (*this)+=tmp;
           i = 0;
       }
