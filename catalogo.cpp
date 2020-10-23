@@ -1,5 +1,8 @@
 #include "catalogo.h"
 #include <algorithm>
+#include <string>
+#include <iostream>
+#include <fstream>
 
 
 Catalogo::Catalogo(){};
@@ -51,7 +54,35 @@ Filme *Catalogo::operator()(const string nome){
     }
   }
   return NULL;
+}
 
+void Catalogo::recoverFromDataBase(ifstream &file){
+  string nomeTmp;
+  string produtoraTmp;
+  double notaTmp;
+  int i = 0;
+  string line;
+  while (getline(file, line)) {
+    line.erase(line.begin(),line.begin() + line.find_first_of(" ") + 1);
+    if(line != ""){
+      switch (i) {
+        case 0:
+          nomeTmp = line;
+          i++;
+          break;
+        case 1:
+          produtoraTmp = line;
+          i++;
+          break;
+        case 2:
+          notaTmp = stod(line);
+          Filme tmp(nomeTmp, produtoraTmp, notaTmp);
+          cout<<"adicionando: "<< tmp.getNome()<<endl;
+          (*this)+=tmp;
+          i = 0;
+      }
+    }
+  }
 }
 
 Filme *Catalogo::operator()(const string nome, const string novaProdutora){

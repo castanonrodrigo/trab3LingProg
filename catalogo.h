@@ -13,6 +13,7 @@ class Catalogo{
     void operator+=(const Filme &);
     void operator-=(const Filme &);
     void insereOrdenaVector(vector<Filme>&);
+    void recoverFromDataBase(ifstream &);
     Filme *operator()(const string);
     Filme *operator()(const string, const string);
     Filme *operator()(const string, const double);
