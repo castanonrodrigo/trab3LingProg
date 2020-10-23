@@ -8,6 +8,7 @@ int main(){
   Filme f("asmosis Jones", "deconhecida", 10.0);
   Filme a("Osmosis Jones", "desconheida",5.5);
   Filme b("aaaaaa", "desconheida",5.5);
+  Filme c;
   Catalogo catalog;
   catalog+= f;
   catalog+= a;

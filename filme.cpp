@@ -13,8 +13,8 @@ ostream &operator<<(ostream & output, const Filme & filme){
 }
 
 istream &operator>>(istream & input, Filme & filme){
-  input >> filme.nome;
-  input >> filme.produtora;
+  getline(input, filme.nome);
+  getline(input, filme.produtora);
   input >> filme.nota;
   return input;
 }
