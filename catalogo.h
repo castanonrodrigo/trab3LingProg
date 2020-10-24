@@ -14,6 +14,7 @@ class Catalogo{
     void operator-=(const Filme &);
     void insereOrdenaVector(vector<Filme>&);
     void recoverFromDataBase(ifstream &);
+    void printMaiorNota()const;
     Filme *operator()(const string);
     Filme *operator()(const string, const string);
     Filme *operator()(const string, const double);
@@ -21,10 +22,6 @@ class Catalogo{
   private:
     //lista de filmes no catálogo
     vector<Filme> filmes;
-    //numero max de filmes
-    int maxFilmes;
-
-
 };
 
 #endif

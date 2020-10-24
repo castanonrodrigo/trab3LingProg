@@ -4,7 +4,6 @@
 #include <iostream>
 #include <fstream>
 
-
 Catalogo::Catalogo(){};
 
 ostream &operator<<(ostream & output, const Catalogo & catalogo){
@@ -63,6 +62,7 @@ void Catalogo::recoverFromDataBase(ifstream &file){
   int i = 0;
   string line;
   while (getline(file, line)) {
+    //limpa caracteres indesejados do input
     line.erase(line.begin(),line.begin() + line.find_first_of(" ") + 1);
     if(line != ""){
       switch (i) {
@@ -84,13 +84,30 @@ void Catalogo::recoverFromDataBase(ifstream &file){
   }
 }
 
+void Catalogo::printMaiorNota()const{
+  if(filmes.size() == 0){
+    cout<<"nenhum filme cadastrado"<<endl;
+    return;
+  }
+  int indexMaior = 0;
+  double valorMaior = 0;
+  for (int i=0; i < filmes.size(); i++){
+    if(valorMaior < filmes[i].getNota()){
+      valorMaior = filmes[i].getNota(); 
+      indexMaior = i;
+    }
+  }
+  cout<<"----------"<<" FILME COM MAIOR NOTA "<<"-----------------"<<endl;
+  cout<<filmes[indexMaior];
+}
+
 Filme *Catalogo::operator()(const string nome, const string novaProdutora){
   Filme *ptr = (*this)(nome);
   if (ptr != NULL){
     ptr->setProdutora(novaProdutora);
     return ptr;
   }else{
-    cout<<"Filme "<<nome <<"nao encontrado"<<endl;
+    cout<<"Filme "<<nome<<" nao encontrado"<<endl;
     return NULL;
   }
 }
@@ -101,10 +118,7 @@ Filme *Catalogo::operator()(const string nome, const double novaNota){
     ptr->setNota(novaNota);
     return ptr;
   }else{
-    cout<<"Filme "<<nome <<"nao encontrado"<<endl;
+    cout<<"Filme "<<nome <<" nao encontrado"<<endl;
     return NULL;
   }
 }
-
-
-
